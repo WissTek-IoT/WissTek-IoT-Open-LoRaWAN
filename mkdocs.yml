@@ -1,0 +1,58 @@
+# Nome exibido no topo do site
+site_name: WissTek-IoT Open LoRaWAN
+
+# URL onde o site será publicado (não pode ter espaços!)
+# Deve corresponder exatamente ao nome do repositório no GitHub
+site_url: https://luucasorfer.github.io/WissTek-IoT
+
+# Link do repositório GitHub (para exibir botão no topo da documentação)
+repo_url: https://github.com/luucasorfer/WissTek-IoT
+
+# Nome exibido ao lado do link do repositório (pode ter espaços)
+repo_name: WissTek-IoT Open LoRaWAN
+
+# Define para onde o `mkdocs gh-deploy` vai fazer o deploy (branch de publicação)
+remote_branch: gh-pages
+
+# Plugins MkDocs usados
+plugins:
+  - search # Habilita a busca no site
+  - macros: # Ativa macros Jinja2 personalizadas
+      module_name: main # Nome do arquivo Python com macros (main.py)
+
+# Tema Material + configurações de estilo
+theme:
+  name: material
+  language: pt-br # Traduz a UI para português
+  palette:
+    scheme: slate # Modo escuro (claro = 'default')
+    primary: blue # Cor principal (barra superior, etc)
+    accent: deep orange # Cor de destaque (links, botões)
+  font:
+    text: Inter, Roboto, sans-serif # Fonte do conteúdo
+    code: Fira Mono, monospace # Fonte para blocos de código
+  extra_css:
+    - docs/stylesheets/extra.css # Arquivo CSS personalizado
+    - https://unpkg.com/aos@2.3.1/dist/aos.css # Biblioteca de animações AOS
+  extra_javascript:
+    - https://unpkg.com/aos@2.3.1/dist/aos.js # JS da animação AOS
+    - https://unpkg.com/feather-icons # Ícones Feather
+
+# Estrutura do menu lateral
+nav:
+  - Introdução: index.md
+  - Projeto e Requisitos: 02-requisitos.md
+  - Configuração do Ambiente: 03-configuracao-ambiente.md
+  - Montagem do Hardware: _04-montagem-hardware.md
+  - Código: _05-codigo.md
+  - Integração LoRaWAN: _06-integracao-lorawan.md
+  - Visualização dos Dados: _07-visualizacao-dados.md
+  - Testes: _08-testes.md
+  - Problemas Comuns: _09-erros-comuns.md
+  - Como Replicar: _10-replicar-projeto.md
+  - Referências: _11-referencias.md
+
+# Extensões de Markdown (para copiar código, etc.)
+markdown_extensions:
+  - codehilite # Destaque de sintaxe em blocos de código
+  - pymdownx.copybutton # Adiciona botão "copiar" aos blocos de código
