@@ -1,5 +1,11 @@
----
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
 
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 ### 📄 `integracao.md`
 
 ```markdown
@@ -16,3 +22,5 @@ Se desejar integrar com servidores como **The Things Network (TTN)**:
 
 > ⚠️ O projeto atual não usa LoRaWAN, apenas comunicação direta LoRa.
 ```
+
+</div>

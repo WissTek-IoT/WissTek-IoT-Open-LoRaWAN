@@ -1,3 +1,11 @@
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
+
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 # Referências
 
 Este projeto foi desenvolvido com base em materiais de código aberto, artigos técnicos e documentação oficial. Abaixo estão as principais referências utilizadas:
@@ -19,3 +27,4 @@ Este projeto foi desenvolvido com base em materiais de código aberto, artigos t
 - [LoRa® Technology – Semtech](https://www.semtech.com/lora)
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)
+</div>

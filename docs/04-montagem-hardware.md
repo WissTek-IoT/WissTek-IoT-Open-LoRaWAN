@@ -1,3 +1,11 @@
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
+
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 # Montagem do Hardware
 
 ## Conexões
@@ -11,3 +19,4 @@ A placa utilizada já possui display OLED e rádio LoRa integrados ao ESP32, dis
   - GPIO5 = LOW
   - GPIO12 = LOW
   - GPIO15 = HIGH
+  </div>

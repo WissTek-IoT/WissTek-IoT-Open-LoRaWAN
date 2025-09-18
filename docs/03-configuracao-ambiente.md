@@ -1,3 +1,11 @@
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
+
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 # Configuração do Ambiente
 
 1. Instale o Arduino IDE
@@ -20,3 +28,4 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 - `Heltec ESP32 Dev-Boards`
 - `ESP8266 and ESP32 Oled Driver for SSD1306 (ThingPulse)`
+</div>

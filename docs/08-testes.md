@@ -1,3 +1,11 @@
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
+
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 # Testes Realizados
 
 Foram realizados testes práticos com duas placas ESP32 LoRa:
@@ -9,3 +17,5 @@ Foram realizados testes práticos com duas placas ESP32 LoRa:
 - **Pacote:** string de texto com contador
 
 > Os valores variam conforme ambiente, interferência e altura das antenas.
+
+</div>

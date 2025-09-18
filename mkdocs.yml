@@ -43,14 +43,14 @@ nav:
   - Introdução: index.md
   - Projeto e Requisitos: 02-requisitos.md
   - Configuração do Ambiente: 03-configuracao-ambiente.md
-  - Montagem do Hardware: _04-montagem-hardware.md
-  - Código: _05-codigo.md
-  - Integração LoRaWAN: _06-integracao-lorawan.md
-  - Visualização dos Dados: _07-visualizacao-dados.md
-  - Testes: _08-testes.md
-  - Problemas Comuns: _09-erros-comuns.md
-  - Como Replicar: _10-replicar-projeto.md
-  - Referências: _11-referencias.md
+  - Montagem do Hardware: 04-montagem-hardware.md
+  - Código: 05-codigo.md
+  - Integração LoRaWAN: 06-integracao-lorawan.md
+  - Visualização dos Dados: 07-visualizacao-dados.md
+  - Testes: 08-testes.md
+  - Problemas Comuns: 09-erros-comuns.md
+  - Como Replicar: 10-replicar-projeto.md
+  - Referências: 11-referencias.md
 # Extensões de Markdown (para copiar código, etc.)
 #markdown_extensions:
 #  - codehilite # Destaque de sintaxe em blocos de código

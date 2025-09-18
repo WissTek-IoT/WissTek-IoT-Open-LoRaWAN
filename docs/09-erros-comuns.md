@@ -1,3 +1,11 @@
+{{ include('includes/EM_DESENVOLVIMENTO.md') }}
+
+<style>
+.md-content-none {
+  display: none !important;
+}
+</style>
+<div class="md-content-none">
 # Problemas Comuns e Soluções
 
 | Problema                     | Solução                                                                   |
@@ -7,3 +15,5 @@
 | Display OLED não mostra nada | Confirme a instalação da biblioteca SSD1306 (ThingPulse)                  |
 | Comunicação falha (LoRa)     | Verifique se ambas placas usam a mesma frequência e antena está conectada |
 | RSSI muito fraco             | Aumente a distância da antena da placa e evite obstáculos metálicos       |
+
+</div>
