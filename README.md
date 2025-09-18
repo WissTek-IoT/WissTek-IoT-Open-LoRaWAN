@@ -10,23 +10,14 @@ Este repositório contém a documentação completa para a criação de uma rede
 ## 📚 Conteúdo
 
 1.  [Introdução ao Projeto](docs/01-introducao.md)
-
 2.  [Requisitos (Hardware e Software)](docs/02-requisitos.md)
-
 3.  [Configuração do Ambiente](docs/03-configuracao-ambiente.md)
-
 4.  [Montagem do Hardware](docs/04-montagem-hardware.md)
-
 5.  [Código-fonte e Lógica](docs/05-codigo.md)
-
 6.  [Integração com a Rede LoRaWAN (TTN)](docs/06-integracao-lorawan.md)
-
 7.  [Visualização de Dados](docs/07-visualizacao-dados.md)
-
 8.  [Testes e Resultados](docs/08-testes.md)
-
 9.  [Problemas Comuns e Soluções](docs/09-erros-comuns.md)
-
 10. [Como Replicar este Projeto](docs/10-replicar-projeto.md)
 
 ## 🧰 Funcionalidades
