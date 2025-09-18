@@ -3,10 +3,10 @@ site_name: WissTek-IoT Open LoRaWAN
 
 # URL onde o site será publicado (não pode ter espaços!)
 # Deve corresponder exatamente ao nome do repositório no GitHub
-site_url: https://luucasorfer.github.io/WissTek-IoT
+site_url: https://WissTek-IoT.github.io/WissTek-IoT-Open-LoRaWAN
 
 # Link do repositório GitHub (para exibir botão no topo da documentação)
-repo_url: https://github.com/luucasorfer/WissTek-IoT
+repo_url: https://github.com/WissTek-IoT/WissTek-IoT-Open-LoRaWAN
 
 # Nome exibido ao lado do link do repositório (pode ter espaços)
 repo_name: WissTek-IoT Open LoRaWAN
@@ -51,8 +51,7 @@ nav:
   - Problemas Comuns: _09-erros-comuns.md
   - Como Replicar: _10-replicar-projeto.md
   - Referências: _11-referencias.md
-
 # Extensões de Markdown (para copiar código, etc.)
-markdown_extensions:
-  - codehilite # Destaque de sintaxe em blocos de código
-  - pymdownx.copybutton # Adiciona botão "copiar" aos blocos de código
+#markdown_extensions:
+#  - codehilite # Destaque de sintaxe em blocos de código
+#  - pymdownx.copybutton # Adiciona botão "copiar" aos blocos de código
