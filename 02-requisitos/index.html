@@ -1,0 +1,960 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://WissTek-IoT.github.io/WissTek-IoT-Open-LoRaWAN/02-requisitos/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../03-configuracao-ambiente/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Projeto e Requisitos - WissTek-IoT Open LoRaWAN</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter,+Roboto,+sans-serif:300,300i,400,400i,700,700i%7CFira+Mono,+monospace:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter, Roboto, sans-serif";--md-code-font:"Fira Mono, monospace"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projeto-e-requisitos" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="WissTek-IoT Open LoRaWAN" class="md-header__button md-logo" aria-label="WissTek-IoT Open LoRaWAN" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WissTek-IoT Open LoRaWAN
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projeto e Requisitos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WissTek-IoT/WissTek-IoT-Open-LoRaWAN" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WissTek-IoT Open LoRaWAN
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WissTek-IoT Open LoRaWAN" class="md-nav__button md-logo" aria-label="WissTek-IoT Open LoRaWAN" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WissTek-IoT Open LoRaWAN
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WissTek-IoT/WissTek-IoT-Open-LoRaWAN" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    WissTek-IoT Open LoRaWAN
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introdução
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Projeto e Requisitos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projeto e Requisitos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gatewayconcentradores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gateway/Concentradores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gateway/Concentradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicao-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição de hardware:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      End Device
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End Device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicao-de-hardware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição de hardware:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-dependencias-e-bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software, Dependências e Bibliotecas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software, Dependências e Bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliotecas:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-Requisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-necessario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Necessário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-necessario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Necessário
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-configuracao-ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuração do Ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_04-montagem-hardware.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Montagem do Hardware
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_05-codigo.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Código
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_06-integracao-lorawan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integração LoRaWAN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_07-visualizacao-dados.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visualização dos Dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_08-testes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_09-erros-comuns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Problemas Comuns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_10-replicar-projeto.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Como Replicar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../_11-referencias.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referências
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gatewayconcentradores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gateway/Concentradores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gateway/Concentradores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicao-de-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição de hardware:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      End Device
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End Device">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicao-de-hardware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição de hardware:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-dependencias-e-bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software, Dependências e Bibliotecas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software, Dependências e Bibliotecas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bibliotecas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliotecas:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-Requisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-necessario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Necessário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-necessario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Necessário
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="projeto-e-requisitos">Projeto e Requisitos</h1>
+<p>O projeto desenvolvido opera da seguinte forma: o dispositivo sensor (end device) coleta os dados e os transmite por meio da rede sem fio LoRa.</p>
+<p>Um gateway próximo capta esses dados e os encaminha para a The Things Network (TTN) via internet.</p>
+<p>A TTN armazena as informações e as disponibiliza para uso em aplicações.</p>
+<p>Agora que entendemos o funcionamento do projeto, é importante definir os requisitos necessários para possibilitar sua replicação.</p>
+<p>Este projeto utiliza dois tipos de dispositivos: Gateway e End Device.</p>
+<h2 id="gatewayconcentradores">Gateway/Concentradores</h2>
+<p>Um <strong>Gateway LoRaWAN</strong> é responsável por atuar como ponte entre os <strong>dispositivos finais (end devices)</strong> e a <strong>rede (internet)</strong>. Ele recebe os sinais LoRa enviados pelos sensores e os encaminha para um <strong>servidor de rede LoRaWAN</strong> através de uma conexão com a internet (como Ethernet, Wi-Fi ou 4G).</p>
+<p>Agora que entendemos o papel do gateway, podemos definir como será sua implementação neste projeto.</p>
+<p>O gateway definido para este projeto será do tipo <strong>LoRaWAN monocanal</strong>, ou seja, operará em uma única frequência. Para isso, será utilizada a <strong>placa Heltec WiFi LoRa 32 (V2)</strong>, que possui suporte à comunicação LoRa e conectividade Wi-Fi integradas.</p>
+<p>Este tipo de gateway é mais simples e econômico, ideal para fins educacionais, protótipos ou ambientes de testes controlados. É importante destacar que gateways monocanal apresentam limitações em termos de capacidade de comunicação simultânea. Por essa razão, são recomendados apenas para aplicações não críticas, onde a confiabilidade e a escalabilidade da rede não sejam fatores determinantes.</p>
+<h3 id="definicao-de-hardware">Definição de hardware:</h3>
+<ul>
+<li><strong>Tipo:</strong> Gateway LoRaWAN monocanal (opera em uma única frequência)</li>
+<li><strong>Placa microcontroladora:</strong> Heltec WiFi LoRa 32 (V2)</li>
+<li><strong>Frequência de operação:</strong> 868–915 MHz (dependendo da região)</li>
+<li><strong>Conectividade:</strong> Comunicação LoRa com os dispositivos finais e Wi-Fi para acesso à internet</li>
+<li><strong>Aplicação:</strong> Recepção dos dados enviados pelos end devices e encaminhamento ao servidor de rede LoRaWAN</li>
+</ul>
+<h2 id="end-device">End Device</h2>
+<p>Os <strong>end devices</strong>, ou <strong>dispositivos finais</strong>, são os nós da rede responsáveis pela coleta de dados no ambiente monitorado. Esses dispositivos são equipados com sensores e módulos de comunicação LoRa, permitindo que transmitam informações de forma remota e com baixo consumo de energia.</p>
+<p>Neste projeto, o end device será implementado com a <strong>placa ESP32-DEVKIT-V1</strong>, associada a um <strong>módulo LoRaWAN da Radioenge</strong>. A comunicação entre o end device e o gateway será realizada utilizando o protocolo LoRa, com alcance que pode variar de algumas centenas de metros até vários quilômetros, dependendo das condições do ambiente (como obstáculos físicos, elevação do terreno e interferências eletromagnéticas).</p>
+<p>O end device pode ser programado para operar em diferentes modos, como envio periódico, envio por evento (quando um valor ultrapassa determinado limite) ou acionamento manual. Essa flexibilidade permite adaptar o funcionamento do dispositivo às necessidades específicas da aplicação. Esse conceito será abordado com mais profundidade ao longo do projeto.</p>
+<h3 id="definicao-de-hardware_1">Definição de hardware:</h3>
+<ul>
+<li><strong>Tipo:</strong> End Device LoRaWAN</li>
+<li><strong>Placa microcontroladora:</strong> ESP32-DEVKIT-V1</li>
+<li><strong>Módulo LoRa:</strong> Módulo LoRaWAN Radioenge</li>
+<li><strong>Frequência de operação:</strong> 868–915 MHz (dependendo da região)</li>
+<li><strong>Conectividade:</strong> Comunicação via protocolo LoRa</li>
+<li><strong>Aplicação:</strong> Coleta e transmissão de dados de sensores ambientais</li>
+</ul>
+<h2 id="software-dependencias-e-bibliotecas">Software, Dependências e Bibliotecas</h2>
+<p>Para o desenvolvimento e a configuração tanto do <strong>gateway</strong> quanto do <strong>end device</strong>, será utilizada a <strong>Arduino IDE</strong>, versão <strong>2.0.17</strong>, escolhida por sua ampla compatibilidade com placas ESP32 e sua facilidade de integração com bibliotecas de terceiros.</p>
+<p>Abaixo estão listadas todas as <strong>bibliotecas necessárias</strong> para o correto funcionamento do projeto, cada uma com sua respectiva versão e autor. Essas bibliotecas devem ser instaladas por meio do <strong>Gerenciador de Bibliotecas</strong> da Arduino IDE ou manualmente, movendo os arquivos para o diretório de bibliotecas do Arduino (C:/<Usuário>/Documents/Arduino/libraries).</p>
+<p>As bibliotecas envolvidas neste projeto possibilitam desde a comunicação LoRa até funcionalidades auxiliares como manipulação de JSON, controle de periféricos, conexão Wi-Fi, entre outras.</p>
+<h3 id="bibliotecas">Bibliotecas:</h3>
+<ul>
+<li><code>Adafruit_NeoPixel</code> — por Adafruit, v1.9.0<br />
+  Permite o controle de LEDs RGB, útil como indicador visual de status do dispositivo.</li>
+<li><code>aes</code>
+  Permite a criptografia de dados, usada para segurança na transmissão de dados.</li>
+<li><code>ArduinoJson</code> — por Benoit Blanchon, v6.14.0<br />
+  Manipulação de objetos JSON para estruturação e envio de dados.</li>
+<li><code>esp32-http-update</code> — por Matej Suchra, v2.1.145<br />
+  Permite atualizações OTA (Over-the-Air) via HTTP.</li>
+<li><code>ESP8266_Oled_Driver_for_SSD1306_display</code>
+  Driver para displays OLED com controlador SSD1306, usado na visualização de informações locais.</li>
+<li><code>gBase64</code> — por Densaugeo, v1.0.0<br />
+  Codificação e decodificação de dados em Base64.</li>
+<li><code>LoRaCode</code>
+  Biblioteca utilizada para controle da comunicação via LoRa.</li>
+<li><code>MCCI_LoRaWAN_LMIC_library</code> — por IBM, v4.1.1<br />
+  Pilha de comunicação LoRaWAN compatível com a especificação oficial.</li>
+<li><code>Streaming</code> — por Mikal Hart, v5.0.0<br />
+  Permite a escrita simplificada em objetos de saída como <code>Serial</code>.</li>
+<li><code>Time</code> — por Michal Margolis, v1.6<br />
+  Permite a manipulação de tempo (relógio interno, timestamps etc.).</li>
+<li><code>TinyGPSPlus</code> — v1.0.2b<br />
+  Interpretação de dados de módulos GPS.</li>
+<li><code>WiFiManager</code> — por tzapu, v2.0.16-rc.2<br />
+  Permite a configuração da rede Wi-Fi sem necessidade de alterar o código fonte, permitindo ao usuário inserir SSID e senha via portal local.</li>
+</ul>
+<h2 id="pre-requisitos">Pré-Requisitos</h2>
+<p>Vamos realizar um <em>recap</em> dos requisitos para nos certificar de que todos eles serão atendidos:</p>
+<ul>
+<li><strong>Drivers USB</strong> instalados para o microcontrolador (<strong>CP210x</strong>, usado em placas ESP32)</li>
+<li><strong>Permissões de acesso à porta serial</strong> (necessário em sistemas <strong>Linux</strong> e <strong>macOS</strong>)</li>
+<li><strong>Acesso à internet</strong> para instalação das bibliotecas e dependências</li>
+<li><strong>Ambiente de desenvolvimento configurado</strong> para compilar e enviar código para os dispositivos (via <strong>Arduino IDE 2.0.17</strong>)</li>
+</ul>
+<hr />
+<h2 id="hardware-necessario">Hardware Necessário</h2>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Quantidade</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Placa Heltec WiFi LoRa 32 (V2)</td>
+<td>1</td>
+<td>Usada como gateway LoRaWAN monocanal</td>
+</tr>
+<tr>
+<td>ESP32 DEVKIT-V1</td>
+<td>1+</td>
+<td>Usado como end device; pode haver mais de um</td>
+</tr>
+<tr>
+<td>Módulo LoRaWAN (ex: Radioenge)</td>
+<td>1+</td>
+<td>Um para cada end device (caso não use Heltec)</td>
+</tr>
+<tr>
+<td>Antenas LoRa</td>
+<td>2+</td>
+<td>Compatíveis com 868 MHz ou 915 MHz</td>
+</tr>
+<tr>
+<td>Cabos jumpers</td>
+<td>Diversos</td>
+<td>Conexão entre módulos e microcontroladores</td>
+</tr>
+<tr>
+<td>Fonte de alimentação</td>
+<td>2+</td>
+<td>Pode ser via USB, bateria LiPo ou fonte externa</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Nota:</strong> A quantidade de dispositivos pode variar conforme o número de nós finais a serem utilizados nos testes.</p>
+</blockquote>
+<hr />
+<h2 id="software-necessario">Software Necessário</h2>
+<table>
+<thead>
+<tr>
+<th>Software/Firmware</th>
+<th>Versão Recomendada</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arduino IDE</td>
+<td>2.0.17</td>
+<td>Ambiente de desenvolvimento principal para ESP32</td>
+</tr>
+<tr>
+<td>ESP32 Drivers (CP210x)</td>
+<td>Atual</td>
+<td>Necessário para upload de código via USB</td>
+</tr>
+<tr>
+<td>Bibliotecas</td>
+<td>Conforme seção anterior</td>
+<td>Comunicação via LoRa e suporte ao protocolo LoRaWAN</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Nota:</strong> Realize a instalação das bibliotecas via o <strong>Gerenciador de Bibliotecas</strong> da Arduino IDE ou manualmente.</p>
+</blockquote>
+<p><br />
+<br /></p>
+<div style="display: flex; justify-content: space-around; margin-top: 2em;">
+  <a href="../01-introducao/" class="md-button md-button--primary" style="width: 360px; text-align: center;">Introdução</a>
+  <a href="../03-configuracao-ambiente/" class="md-button md-button--primary" style="width: 360px; text-align: center;">Configuração do Ambiente</a>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

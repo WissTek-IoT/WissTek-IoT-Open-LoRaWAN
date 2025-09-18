@@ -1,0 +1,17 @@
+.md-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+.md-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.md-sidebar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+.md-sidebar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 3px;
+}
+.md-nav__link:hover {
+  background-color: #374151; /* cinza escuro hover */
+}
