@@ -1,3 +1,4 @@
+# Informações do projeto
 # Nome exibido no topo do site
 site_name: WissTek-IoT Open LoRaWAN
 
@@ -5,38 +6,94 @@ site_name: WissTek-IoT Open LoRaWAN
 # Deve corresponder exatamente ao nome do repositório no GitHub
 site_url: https://WissTek-IoT.github.io/WissTek-IoT-Open-LoRaWAN
 
+# Descrição do site (meta description)
+site_description: Guia passo a passo para construir um dispositivo IoT com LoRaWAN
+site_author: WissTek-IoT
+
+# Informações do repositorio
 # Link do repositório GitHub (para exibir botão no topo da documentação)
 repo_url: https://github.com/WissTek-IoT/WissTek-IoT-Open-LoRaWAN
-
 # Nome exibido ao lado do link do repositório (pode ter espaços)
 repo_name: WissTek-IoT Open LoRaWAN
-
 # Define para onde o `mkdocs gh-deploy` vai fazer o deploy (branch de publicação)
 remote_branch: gh-pages
 
-# Plugins MkDocs usados
-plugins:
-  - search # Habilita a busca no site
-  - macros: # Ativa macros Jinja2 personalizadas
-      module_name: main # Nome do arquivo Python com macros (main.py)
+# Copyright
+copyright: Copyright &copy; 2025 Laboratório Wisstek - UNICAMP. Desenvolvido por Lucas Fernandes.
 
-# Tema Material + configurações de estilo
+# Configurações do tema Material
 theme:
+  language: pt-BR
   name: material
-  language: pt-br # Traduz a UI para português
-  palette:
-    scheme: slate # Modo escuro (claro = 'default')
-    primary: blue # Cor principal (barra superior, etc)
-    accent: deep orange # Cor de destaque (links, botões)
+  favicon: assets/favicon.png
+  logo: assets/logo.png
+
+  features:
+    - navigation.sections
+
+  # Configurações de fonte
   font:
-    text: Inter, Roboto, sans-serif # Fonte do conteúdo
-    code: Fira Mono, monospace # Fonte para blocos de código
-  extra_css:
-    - docs/stylesheets/extra.css # Arquivo CSS personalizado
-    - https://unpkg.com/aos@2.3.1/dist/aos.css # Biblioteca de animações AOS
-  extra_javascript:
-    - https://unpkg.com/aos@2.3.1/dist/aos.js # JS da animação AOS
-    - https://unpkg.com/feather-icons # Ícones Feather
+    text: Inter, Roboto, sans-serif
+    code: Fira Mono, monospace
+
+  # Configurações de cores
+  palette:
+    # Alternância de paleta para modo automático
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Alternar para modo claro
+
+    # Modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Alternar para modo escuro
+
+    # Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/toggle-switch
+        name: Alternar para modo claro
+
+# Configurações adicionais do tema
+extra:
+  status:
+    new: Recently added
+    deprecated: Deprecated
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/WissTek-IoT/
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/feec-unicamp/
+    - icon: fontawesome/brands/chrome
+      link: https://wisstek-iot.cc/
+
+# Plugins do MkDocs usados
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - macros:
+      module_name: main
+
+# CSS Adicional
+extra_css:
+  - stylesheets/extra.css
+  - https://unpkg.com/aos@2.3.1/dist/aos.css
+
+# JavaScript Adicional
+extra_javascript:
+  - https://unpkg.com/aos@2.3.1/dist/aos.js
+  - https://unpkg.com/feather-icons
 
 # Estrutura do menu lateral
 nav:
@@ -51,7 +108,11 @@ nav:
   - Problemas Comuns: 09-erros-comuns.md
   - Como Replicar: 10-replicar-projeto.md
   - Referências: 11-referencias.md
+
 # Extensões de Markdown (para copiar código, etc.)
-#markdown_extensions:
-#  - codehilite # Destaque de sintaxe em blocos de código
-#  - pymdownx.copybutton # Adiciona botão "copiar" aos blocos de código
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences

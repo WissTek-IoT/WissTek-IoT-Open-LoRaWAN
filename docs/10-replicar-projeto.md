@@ -1,10 +1,5 @@
 {{ include('includes/EM_DESENVOLVIMENTO.md') }}
 
-<style>
-.md-content-none {
-  display: none !important;
-}
-</style>
 <div class="md-content-none">
 # Como Replicar o Projeto
 

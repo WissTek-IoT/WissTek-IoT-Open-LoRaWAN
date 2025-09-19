@@ -63,7 +63,7 @@ Este projeto proporcionou:
 
 ## 🖼️ Galeria
 
-![Diagrama da Rede LoRaWAN](https://chatgpt.com/assets/images/diagrama_lorawan.png)
+![Diagrama da Rede LoRaWAN](./assets/images/diagrama_lorawan.png)
 
 _Diagrama da rede LoRaWAN._
 
@@ -86,4 +86,4 @@ Para perguntas, sugestões, oportunidades de colaboração ou qualquer outro tó
 
 ---
 
-© 2025 Lucas Fernandes
+Copyright © 2025 Laboratório Wisstek - UNICAMP. Desenvolvido por Lucas Fernandes.
